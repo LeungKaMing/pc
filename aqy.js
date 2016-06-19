@@ -380,7 +380,6 @@ var winH = document.documentElement.clientHeight | document.body.clientHeight;
 var login = rightR.getElementsByTagName("li")[0];
 
 login.onclick = function (e) {
-    debugger
     shadowBox.style.display = "block";
     shadowBox.style.width = winW + "px";
     shadowBox.style.height = winH + "px";
@@ -390,12 +389,23 @@ login.onclick = function (e) {
     lgBox.id="loginBox";
     lgBox.innerHTML=loginBox();
     all.appendChild(lgBox);
+    
+    var closeBtn=document.getElementById("closeBtn");
+
+    closeBtn.onclick=function(e){
+        var lgBox=document.getElementById("loginBox");
+        console.log(lgBox);
+        all.removeChild(lgBox);
+        shadowBox.style.display="none";
+    }    
 }
-console.log(window.loginBox)
+
+
+
 function loginBox() {
     var str = "";
     str += "<div class='loginHead'>";
-    str += "<a href='javascript:;' class='closeBtn'></a>";
+    str += "<a href='javascript:;' id='closeBtn'></a>";
     str += "</div>";
     str += "<div class='loginBody'>";
     str+="<div class='loginCon'>";

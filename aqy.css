@@ -3267,7 +3267,7 @@ html, body {
     height:170px;
     background: url("./img/loginHead.png") no-repeat center center;
 }
-#loginBox .loginHead .closeBtn{
+#closeBtn{
     position: absolute;
     top:70px;
     right:17px;
