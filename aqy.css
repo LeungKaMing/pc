@@ -1,0 +1,3408 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+a,button,input{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-modify: read-write-plaintext-only;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+    background:url("img/lazyload.png") no-repeat center center;
+}
+
+input {
+    border: none;
+    outline: 0;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+/*没高度因为内容不限制*/
+html, body {
+    width: 100%;
+    min-width: 1000px;
+    font: 14px Tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1", sans-serif;
+}
+
+#all {
+    margin: 0 auto;
+}
+
+/*当超过一定屏幕高度还会以渐变方式出现在第二屏==>可移动*/
+#navZhanwei{
+    position: static;
+    width:100%;
+    height: 60px;
+    background: #222;
+}
+#navBox {
+    position: relative;
+    width:100%;
+    height: 60px;
+    background: #222;
+    z-index: 100;
+}
+#navBox.navFixed{
+    position: fixed;
+    top:0;
+    animation:change 0.7s;
+}
+@keyframes change {
+    0%{
+        opacity:0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+.nav {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 4px;
+    width: 1380px;
+    height: 55px;
+    line-height: 55px;
+}
+
+.nav .icon {
+    float: left;
+    padding-top: 1px;
+    height: 50px;
+    background: url("img/iqiyi-logo105x50.png") no-repeat center center;
+}
+
+.nav .icon a {
+    width: 105px;
+    height: 50px;
+}
+
+.nav .icon2 {
+    float: left;
+    margin-top: -2px;
+    height: 56px;
+    background: url("img/runingman-logo.png") no-repeat center center;
+}
+
+.nav .icon2 a {
+    margin-top: 8px;
+    margin-left: 49px;
+    width: 97px;
+    height: 48px;
+}
+
+.right {
+    float: right;
+    padding-top: 7px;
+    width: 1022px;
+    height: 49px;
+    font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Helvetica, sans-serif;
+}
+
+/*鼠标悬停时border为绿色*/
+.right .rightLBox {
+    float: left;
+    position: relative;
+    width: 570px;
+    height: 36px;
+    background: #e3e3e3;
+    border: 1px solid #d7d7d7;
+    /*border: 1px solid green;*/
+    border-radius: 2px 4px 4px 2px;
+}
+
+.right .rightLBox .rightL {
+    padding-right: 46px;
+    height: 38px;
+}
+
+.right .rightLBox .rightL a .searchBox {
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    text-indent: 9px;
+    color: #666;
+    padding: 10px 0;
+    width: 524px;
+    height: 18px;
+    line-height: 18px;
+    background: transparent;
+    font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.right .rightLBox .rightL a:hover .searchBox {
+    /*后期用JS补充判断只要获得焦点onfocus就背景为白色*/
+    background: #fff;
+}
+
+.right .rightLBox .rightL .rLButton {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background: url("img/topNav.png") no-repeat center center;
+    background-position: 0 0;
+    border-radius: 2px 4px 4px 2px;
+}
+
+.right .rightL .rLButton a {
+    width: 110px;
+    height: 38px;
+}
+
+.right .rightR {
+    position: absolute;
+    top:13px;
+    right:-23px;
+    display: block;
+    width: 442px;
+    margin-left: 36px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.right .rightR .navList {
+    float: left;
+    margin-top: 5px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.right .rightR li a {
+    color: #ccc;
+}
+
+.right .rightR li a:hover {
+    color: #5aa700;
+}
+
+.right .rightR .login {
+    margin-right: 13px;
+}
+
+.right .rightR .reg, .right .rightR .text {
+    margin-right: 9px;
+}
+
+.right .rightR .vip {
+    margin-right: 10px;
+}
+
+.right .rightR .upload {
+    position: relative;
+    margin-right: 9px;
+    float: left;
+    margin-top: 5px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+}
+.right .rightR .upload .navUl{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.right .rightR .upload .uploadList {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: -11px;
+    width: 98px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    border-top-color: transparent;
+    color: green;
+    z-index: 100;
+}
+
+.right .rightR .upload .uploadList2 {
+    display: block;
+    opacity: 1;
+}
+
+.right .rightR .upload .uploadList li {
+    display: block;
+    line-height: 20px;
+}
+.right .rightR .upload .uploadList li a{
+    display: block;
+    text-align: center;
+    margin: 6px 0;
+    color: #333;
+}
+
+.right .rightR .upload .uploadList li a:hover{
+    background-color: #f2f2f2;
+    color: #699f00;
+}
+
+/*后面把鼠标悬停用JS改成点击*/
+/*.right .rightR .upload :hover .uploadList{*/
+/*display: block;*/
+/*}*/
+.right .rightR .upload .uploadListTri {
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: 30px;
+    border: 8px dashed transparent;
+    border-color: transparent transparent #fff transparent;
+    z-index: 100;
+}
+
+.right .rightR .upload .uploadListTri2 {
+    display: block;
+}
+
+.right .rightR .upload a .uploadIcon {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    margin: 0 2px 0;
+    background: url("img/nav-upload.png") no-repeat;
+    opacity: 0.6;
+}
+.right .rightR .upload a:hover .uploadIcon,.right .rightR .upload a .uploadIcon2 {
+    background: url("img/nav-upload-green2.png") no-repeat;
+}
+
+.right .rightR .upload .navUl .uploadFont{
+    color: #5aa700;
+}
+
+/*鼠标移动过去*/
+.right .rightR .upload a:hover .uploadFont{
+    color: #5aa700;
+}
+
+.right .rightR .upload .tri, .right .rightR .text .tri, .right .rightR .last .tri {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    margin-left: 4px;
+    border: 5px solid #ccc;
+    border-color: #ccc transparent transparent transparent;
+    opacity: 0.6;
+    vertical-align: middle;
+}
+.right .rightR .upload a:hover .tri, .right .rightR .text a:hover .tri, .right .rightR .last a:hover.tri,.right .rightR .upload .tri2, .right .rightR .text .tri2, .right .rightR .last .tri2 {
+    border-color:#5aa700 transparent transparent  transparent;
+}
+
+/*把上述a全部用js的方法代替掉*/
+.right .rightR .download {
+    margin-right: 11px;
+}
+
+.right .rightR .last {
+    margin-right: 0;
+}
+
+/*======================body=======================*/
+#banner {
+    position: relative;
+    width: 100%;
+    height: 410px;
+    background: #222222;
+}
+
+#banner .inner {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 410px;
+    background-color: #010101;
+    overflow: hidden;
+}
+
+#banner .inner div {
+    position: absolute;
+    width: 100%;
+    height: 410px;
+    z-index: 0;
+    opacity: 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#banner .inner .img1 {
+    z-index: 1;
+    opacity: 1;
+    background: url("img/banner/banner1.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img2 {
+    background: url("img/banner/banner2.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img3 {
+    background: url("img/banner/banner3.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img4 {
+    background: url("img/banner/banner4.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img5 {
+    background: url("img/banner/banner5.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img6 {
+    background: url("img/banner/banner6.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img7 {
+    background: url("img/banner/banner7.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img8 {
+    background: url("img/banner/banner8.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img9 {
+    background: url("img/banner/banner9.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner .img10 {
+    background: url("img/banner/banner10.jpg") no-repeat;
+    background-position: top center;
+}
+
+#banner .inner div a {
+    display: block;
+    margin: 0 auto;
+    width: 1280px;
+    height: 100%;
+}
+
+/*======================banner右侧=======================*/
+/*加在了.nav那里*/
+#banner .rightNav {
+    position: absolute;
+    top: 16px;
+    right: 247px;
+    width: 247px;
+    height: 371px;
+    background: url("img/site-focuslist_bg.png") no-repeat;
+    z-index: 2;
+    color: #ccc;
+}
+
+#banner .rightNav .firr {
+    margin-top: 16px;
+}
+
+#banner .rightNav .firr a {
+    color: #fff;
+}
+
+#banner .rightNav li {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+#banner .rightNav li a {
+    margin: 2px 15px 0 15px;
+    padding: 0 16px;
+    height: 31px;
+    line-height: 31px;
+    color: #ccc;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/*======================banner下体=======================*/
+#all .bannerBottomBox {
+    padding-top: 10px;
+    width: 100%;
+    height: 110px;
+    background-color: #010101;
+}
+
+#all .bannerBottomBox .bannerBottomInnerBox {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 1380px;
+    height: 75px;
+    border: 1px solid #5aa700;
+    border-radius: 4px;
+    background: #000;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+#all .bannerBottomBox .bannerBottomInnerBox .bannerBottom {
+    margin-right: -2%;
+}
+
+#all .bt1 {
+    float: left;
+    padding-left: 2%;
+}
+
+#all .bt1 li {
+    display: block;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+
+/*#all .bt3 li,#all .bt4 li,#all .bt5 li,#all .bt6 li*/
+#all .bt1 li a {
+    display: inline-block;
+    color: #ccc;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+
+#all .bt1 li a:hover {
+    color: #6cc900;
+    width: 100%;
+    height: 100%;
+}
+
+#all .bt2 {
+    float: left;
+    padding-left: 2%;
+    background: url("img/navLine.png") no-repeat 0 -12px;
+    width: 11%;
+    margin-left: 36px;
+}
+
+#all .bt5 {
+    float: left;
+    padding-left: 2%;
+    background: url("img/navLine.png") no-repeat 0 -12px;
+    width: 11%;
+}
+
+#all .bt2 li, #all .bt5 li {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+#all .bt2 li a, #all .bt5 li a {
+    float: left;
+    color: #ccc;
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+}
+
+#all .bt2 li a:hover, #all .bt5 li a:hover {
+    color: #6cc900;
+    width: 50%;
+    height: 100%;
+}
+
+#all .bt3, #all .bt4 {
+    float: left;
+    padding-left: 2%;
+    background: url("img/navLine.png") no-repeat 0 -12px;
+    width: 9%;
+}
+
+#all .bt3 li, #all .bt4 li {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+#all .bt3 li a, #all .bt4 li a {
+    float: left;
+    color: #ccc;
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+}
+
+#all .bt3 li a:hover, #all .bt4 li a:hover {
+    color: #6cc900;
+    width: 50%;
+    height: 100%;
+}
+
+#all .bt6, #all .bt7 {
+    float: left;
+    padding-left: 3%;
+    background: url("img/navLine.png") no-repeat 0 -12px;
+    width: 15%;
+}
+
+#all .bt6 li, #all .bt7 li {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+#all .bt6 li a, #all .bt7 li a {
+    float: left;
+    color: #ccc;
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+}
+
+#all .bt6 li a:hover, #all .bt7 li a:hover {
+    color: #6cc900;
+    width: 50%;
+    height: 100%;
+}
+
+#all .bannerBottomBox .bannerBottom h1 {
+    float: left;
+    padding: 0 0 0 12px;
+    width: 72px;
+    height: 75px;
+    background: url("img/navLine.png") no-repeat 0 -12px;
+}
+
+#all .bannerBottomBox .bannerBottom h1 a {
+    background: url("img/vip-star.jpg");
+    width: 100%;
+    height: 100%;
+}
+
+/*文字变绿色*/
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR span a:hover, .content1 .content1Right .c1RCols1 dl dd a:hover, #content .content1 .content1Left .gif1 dd a:hover, #content .content1 .content1Left .gif2 dd a:hover, #content .content1 .content1Left .gif1 dt a:hover, #content .content1 .content1Left .gif2 dt a:hover, #content .content1 .content1Left .content1LeftContent div a:hover, #content .content1 .content1Left h2.bigTitle a.bigTitleFont:hover, #content .content1 .content1Left .content1LeftHead .c1LHeadLeft p a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConL dl dd div a.c2Desc1:hover, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConL dl dd div a.c2Desc2:hover {
+    color: #699f00;
+    text-decoration: none;
+}
+
+/*正文内容*/
+#content {
+    margin: 25px auto;
+    width: 1380px;
+}
+
+#content .content1 {
+    height: 453px;
+    line-height: 453px;
+}
+
+/*内容1的左部分*/
+#content .content1 .content1Left {
+    position: relative;
+    float: left;
+    width: 400px;
+    height: 446px;
+}
+
+#content .content1 .content1Left .content1LeftHead {
+    width: 380px;
+    height: 45px;
+    border-bottom: 2px solid #85ba4d;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadLeft {
+    float: left;
+    width: 147px;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadLeft h3 {
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    font-weight: normal;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadLeft h3 a {
+    font-size: 24px;
+    color: #699f00;
+    text-decoration: none;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadLeft p {
+    float: left;
+    margin-top: 5px;
+    padding-left: 7px;
+    padding-right: 5px;
+    font-size: 14px;
+    height: 46px;
+    line-height: 46px;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight {
+    position: relative;
+    float: right;
+    width: 77px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    margin-right: -8px;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .c1HRStar {
+    /*margin-top: 11px;*/
+    width: 56px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #e9e9e9;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .c1HRStar em {
+    padding-top: 1px;
+    display: inline-block;
+    width: 15px;
+    height: 18px;
+    background: url("img/site-icons-qyIndex.png");
+    background-position: -120px -400px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight i {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 44px;
+    margin-right: -21px;
+    width: 68px;
+    height: 10px;
+    content: "";
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .duboList {
+    display: none;
+    position: absolute;
+    top: 46px;
+    right: 8px;
+    width: 110px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #cfcfcf;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight ul li {
+    border: 1px dotted #cfcfcf;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight ul .firstLi {
+    border: 0;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight ul li a {
+    display: block;
+    height: 33px;
+    line-height: 33px;
+    color: #333;
+    text-decoration: none;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .c1HRStar:hover {
+    background: #78b500;
+    border: 1px solid #78b500;
+    text-decoration: none;
+    color: #fff;
+}
+
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .c1HRStar:hover em {
+    background: url("img/site-icons-qyIndex.png");
+    background-position: -200px -1158px;
+}
+
+/*.c1HeadRight ul更换的样式*/
+#content .content1 .content1Left .content1LeftHead .c1LHeadRight .duboList2 {
+    display: block;
+}
+
+#content .content1 .content1Left .bigTitle {
+    margin-top: 16px;
+    margin-right: 12px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#content .content1 .content1Left h2.bigTitle a.bigTitleFont {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #333;
+    margin-right: 21px;
+    font-size: 20px;
+}
+
+#content .content1 .content1Left p.bigTitleDown {
+    border-bottom: 1px dotted #ccc;
+    padding-left: 24px;
+    margin-right: -5px;
+    width: 356px;
+    height: 31px;
+    line-height: 31px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#content .content1 .content1Left p.bigTitleDown a {
+    float: left;
+    margin-right: 5px;
+    color: #666;
+    font-size: 12px;
+}
+
+#content .content1 .content1Left .content1LeftContent {
+    padding-top: 5px;
+    width: 400px;
+    height: 227px;
+    line-height: 227px;
+    font-size: 16px;
+}
+
+#content .content1 .content1Left .content1LeftContent div {
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#content .content1 .content1Left .content1LeftContent div .listMark, .content1 .content1Middle .c1MidContent div .listMark {
+    display: inline-block;
+    vertical-align: middle;
+    width: 13px;
+    height: 15px;
+    background: url("img/site-icons-qyIndex.png") no-repeat;
+    background-position: -100px -1420px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+#content .content1 .content1Left .content1LeftContent div a {
+    display: inline-block;
+    height: 100%;
+    color: #333;
+    margin-right: 10px;
+}
+
+#content .content1 .content1Left .content1LeftContent .gifList {
+    margin-left: -20px;
+    margin-top: 10px;
+    width: 100%;
+    height: 151px;
+    overflow: hidden;
+}
+
+#content .content1 .content1Left .gif1, #content .content1 .content1Left .gif2 {
+    float: left;
+    width: 180px;
+    height: 100%;
+    padding-left: 20px;
+}
+
+#content .content1 .content1Left .gif1 dt, #content .content1 .content1Left .gif2 dt {
+    width: 180px;
+    height: 101px;
+    overflow: hidden;
+}
+
+#content .content1 .content1Left .gif1 dt img, #content .content1 .content1Left .gif1 dt img, #content .content1 .content1Left .gif2 dt img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+#content .content1 .content1Left .gif1 dt a, #content .content1 .content1Left .gif2 dt a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    overflow: hidden;
+}
+
+#content .content1 .content1Left .gif1 dd, #content .content1 .content1Left .gif2 dd {
+    height: 23px;
+    line-height: 23px;
+    padding: 7px 5px 0;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ebebeb;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+#content .content1 .content1Left .gif1 dd a, #content .content1 .content1Left .gif2 dd a {
+    display: block;
+    height: 100%;
+    line-height: 100%;
+}
+
+/*内容1的中间部分*/
+#content .content1 .content1Middle {
+    float: left;
+    width: 400px;
+    height: 442px;
+}
+
+/*太长了样式名，开始简写*/
+.content1 .content1Middle .c1MidLunboBox {
+    position: relative;
+    width: 380px;
+    height: 252px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidLunbo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1520px;
+    height: 252px;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidLunbo .c1MidLunboCon {
+    display: block;
+    float: left;
+    width: 380px;
+    height: 252px;
+}
+.content1 .content1Middle .c1MidLunboBox .c1MidLunbo .c1MidLunboCon .c1MidLunboText {
+    position: absolute;
+    bottom: 0;
+    width: 380px;
+    height: 40px;
+    line-height: 40px;
+    background: rgba(0, 0, 0, .5);
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.content1 .content1Middle .c1MidLunboBox .c1MidLunbo .c1MidLunboCon .c1MidLunboText .listMark2 {
+    display: inline-block;
+    margin: -1px 7px 0 7px;
+    width: 32px;
+    height: 27px;
+    background: url("img/listMark2.png") no-repeat center center;
+    vertical-align: middle;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidLunbo .c1MidLunboCon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*--------------------------------------------------*/
+
+/*------------------------------------------------------------------*/
+.content1 .content1Middle .c1MidLunboBox .c1MidBtnLeft,.content2 .c2MidBtnLeft {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -22px;
+    width: 25px;
+    height: 43px;
+    background: url("img/btnLeft.png") no-repeat center center;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidBtnRight,.content2 .c2MidBtnRight {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -22px;
+    width: 25px;
+    height: 43px;
+    background: url("img/btnRight.png") no-repeat center center;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidBtnLeft:hover,.content2 .c2MidBtnLeft:hover {
+    background: url("img/btnLeft2.png") no-repeat center center;
+}
+
+.content1 .content1Middle .c1MidLunboBox .c1MidBtnRight:hover,.content2 .c2MidBtnRight:hover {
+    background: url("img/btnRight2.png") no-repeat center center;
+}
+
+.content1 .content1Middle .c1MidContent {
+    margin-right: -5px;
+    height: 180px;
+}
+
+.content1 .content1Middle .c1MidContent div {
+    padding-top: 10px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content1 .content1Middle .c1MidContent div .firMidCon {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+}
+
+.content1 .content1Middle .c1MidContent div a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+/*内容1的右边部分*/
+.content1 .content1Right {
+    float: left;
+    margin-right: -20px;
+    margin-bottom: -15px;
+}
+
+.content1 .content1Right .c1RCols1 {
+    float: left;
+    padding-right: 20px;
+    width: 180px;
+}
+
+.content1 .content1Right .c1RCols1 dl {
+    display: block;
+    width: 180px;
+    height: 151px;
+}
+
+.content1 .content1Right .c1RCols1 dl dt {
+    display: block;
+    height: 101px;
+    line-height: 101px;
+}
+
+.content1 .content1Right .c1RCols1 dl dt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content1 .content1Right .c1RCols1 dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2 url("img/lazyload.png") no-repeat center center;
+}
+
+.content1 .content1Right .c1RCols1 dl dd {
+    height: 27px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background-color: #f2f2f2;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content1 .content1Right .c1RCols1 dl dd a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: #333;
+}
+
+/*内容2*/
+#content .content2 {
+    width: 1400px;
+    height: 427px;
+    line-height: 427px;
+    margin-bottom: 15px;
+}
+
+.content2 .content2LeftBox {
+    float: left;
+    width: 1180px;
+    height: 100%;
+}
+
+.content2 .content2LeftBox .c2LBoxHead {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadL {
+    padding-right: 7px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadL h3 {
+    float: left;
+    height: 45px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR {
+    float: left;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR .c2HRFir {
+    padding-left: 22px;
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR .c2HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content2 .content2LeftBox .c2LBoxHead .c2HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon {
+    height: 340px;
+    line-height: 340px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL {
+    position: relative;
+    float: left;
+    width: 380px;
+    height: 340px;
+    overflow: hidden;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1520px;
+    height: 340px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd{
+    float: left;
+    width: 380px;
+}
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd .ddT {
+    display: block;
+    width:100%;
+    height:100%;
+}
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd .ddT img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd p{
+    height: 47px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+/*.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL dl dd div {*/
+    /*float: left;*/
+    /*width: 380px;*/
+    /*height: 47px;*/
+    /*line-height: 47px;*/
+/*}*/
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd div a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd p a.c2Desc1 {
+    color: #333;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConL .dl .dt .dd p a.c2Desc2 {
+    color: #999;
+    font-size: 12px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM {
+    float: left;
+    height: 340px;
+    line-height: 340px;
+}
+
+.c2LBoxConM .c2LBoxConMCols1, .c2LBoxConM .c2LBoxConMCols2, .c2LBoxConM .c2LBoxConMCols3, .c2LBoxConM .c2LBoxConMCols4 {
+    float: left;
+    margin-left: 20px;
+    width: 180px;
+    height: 340px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl {
+    display: block;
+    width: 180px;
+    height: 170px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dt, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dt, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dt,.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dt {
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dt a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dt a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dt a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dt a img, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dt a img, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dt a img, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dd, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dd, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dd, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dd {
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dd .desc1, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dd .desc1, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dd .desc1, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dd .desc1 {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dd .desc1 a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dd .desc1 a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dd .desc1 a, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dd .desc1 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols1 dl dd .desc2, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols2 dl dd .desc2, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols3 dl dd .desc2, .content2 .content2LeftBox .c2LBoxCon .c2LBoxConM .c2LBoxConMCols4 dl dd .desc2 {
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*实际会根据浏览器窗口变化而改变*/
+
+/*content2右边部分*/
+.content2 .content2RightBox {
+    float: left;
+    width: 180px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.content2 .content2RightBox .c2RBoxHead {
+    display: block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+    margin-bottom: 25px;
+}
+
+.content2 .content2RightBox .c2RBoxHead h3 {
+    display: inline-block;
+    height: 45px;
+    font-weight: normal;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+}
+
+.content2 .content2RightBox .c2RBoxHead h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #699f00;
+    font-size: 28px;
+    padding-left: 20px;
+}
+
+.content2 .content2RightBox .c2RBoxHead h3 a span {
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+.content2 .content2RightBox dl dt {
+    width: 180px;
+    height: 101px;
+}
+
+.content2 .content2RightBox dl dt img {
+    display: block;
+    width: 180px;
+    height: 101px;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content2 .content2RightBox dl dd {
+    background: #f2f2f2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-bottom: 13px;
+}
+
+.content2 .content2RightBox dl .firJc {
+    margin-bottom: 4px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px dotted #ccc;
+    text-indent: 5px;
+    padding: 7px 5px 6px;
+}
+
+.content2 .content2RightBox dl dd p {
+    height: 34px;
+    line-height: 34px;
+    padding-left: 10px;
+}
+
+.content2 .content2RightBox dl dd p a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content2 .content2RightBox dl dd p em {
+    display: inline-block;
+    padding-right: 5px;
+    width: 6px;
+    height: 6px;
+    background: url("img/site-icons-qyIndex.png") no-repeat -200px -700px;
+    vertical-align: middle;
+}
+
+/*内容3*/
+.content3 {
+    width: 1400px;
+    height: 216px;
+    line-height: 216px;
+}
+
+.content3 .c3Head {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.content3 .c3Head a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content3 .c3Head a h3 {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 22px;
+    padding-right: 8px;
+}
+
+.content3 .c3Head a span {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.content3 .c3Content {
+    margin-right: -20px;
+    width: 100%;
+    height: 170px;
+    line-height: 170px;
+}
+
+.content3 .c3Content dl {
+    float: left;
+    width: 180px;
+    height: 170px;
+    line-height: 170px;
+    padding-right: 20px;
+}
+
+.content3 .c3Content dl dt {
+    display: block;
+    width: 100%;
+    height: 101px;
+    line-height: 101px;
+}
+
+.content3 .c3Content dl dt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content3 .c3Content dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2 url("img/lazyload.png") no-repeat center center;
+}
+
+.content3 .c3Content dl dd {
+    position: relative;
+    height: 41px;
+    line-height: 21px;
+    padding: 6px 5px;
+    background-color: #f2f2f2;
+}
+
+.content3 .c3Content dl dd span {
+    float: left;
+    height: 13px;
+    line-height: 13px;
+    text-align: center;
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+    color: #699f00;
+    margin-right: 3px;
+    padding: 3px;
+    font-size: 12px;
+}
+
+.content3 .c3Content dl dd a {
+    color: #333;
+}
+
+.content3 .c3Content dl dd a:hover {
+    color: #699f00;
+}
+/*================================*/
+.content4{
+    display: block;
+    width: 1400px;
+    height: 216px;
+    line-height: 216px;
+}
+.content4 .c4Head {
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top:15px;
+}
+
+.content4 .c4Head .c4HeadL {
+    padding-right: 7px;
+}
+
+.content4 .c4Head .c4HeadL h3 {
+    float: left;
+    height: 45px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.content4 .c4Head .c4HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content4 .c4Head .c4HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content4 .c4Head .c4HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content4 .c4Head .c4HeadR {
+    display: inline-block;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content4 .c4Head .c4HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content4 .c4Head .c4HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content4 .c4Head .c4HeadR .c4HRFir {
+    padding-left: 22px;
+}
+
+.content4 .c4Head .c4HeadR .c4HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content4 .c4Head .c4HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+
+.content4 .c4Content dl{
+    float: left;
+    width: 180px;
+    height: 170px;
+    line-height: 170px;
+    padding-right: 20px;
+}
+
+.content4 .c4Content dl dt {
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.content4 .c4Content dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content4 .c4Content dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content4 .c4Content dl dd{
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content4 .c4Content dl dd .desc1{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content4 .c4Content dl dd .desc1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content4 .c4Content dl dd .desc2{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*内容5*/
+.content5 {
+    width: 1400px;
+    height: 427px;
+    line-height: 427px;
+    margin-bottom: 15px;
+}
+
+.content5 .content5LeftBox {
+    float: left;
+    width: 1400px;
+    height: 100%;
+}
+
+.content5 .content5LeftBox .c5LBoxHead {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadL {
+    padding-right: 7px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadL h3 {
+    float: left;
+    height: 45px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR {
+    float: left;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR .c5HRFir {
+    padding-left: 22px;
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR .c5HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content5 .content5LeftBox .c5LBoxHead .c5HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon {
+    height: 340px;
+    line-height: 340px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL {
+    float: left;
+    width: 380px;
+    height: 340px;
+    overflow: hidden;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1520px;
+    height: 270px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dt a {
+    float: left;
+    width: 380px;
+    height: 100%;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dd {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1520px;
+    height: 47px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dd div {
+    float: left;
+    width: 380px;
+    height: 47px;
+    line-height: 47px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dd div a {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dd div a.c2Desc1 {
+    color: #333;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConL dl dd div a.c2Desc2 {
+    color: #999;
+    font-size: 12px;
+}
+
+.content5 .content5LeftBox .c5LBoxCon .c5LBoxConM {
+    float: left;
+    height: 340px;
+    line-height: 340px;
+}
+
+.c5LBoxConM .c5LBoxConMCols1,.c5LBoxConM .c5LBoxConMCols2,.c5LBoxConM .c5LBoxConMCols3,.c5LBoxConM .c5LBoxConMCols4,.c5LBoxConM .c5LBoxConMCols5 {
+    float: left;
+    margin-left: 20px;
+    width: 180px;
+    height: 340px;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl,.c5LBoxConM .c5LBoxConMCols2 dl,.c5LBoxConM .c5LBoxConMCols3 dl,.c5LBoxConM .c5LBoxConMCols4 dl,.c5LBoxConM .c5LBoxConMCols5 dl {
+    display: block;
+    width: 180px;
+    height: 170px;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dt,.c5LBoxConM .c5LBoxConMCols2 dl dt,.c5LBoxConM .c5LBoxConMCols3 dl dt,.c5LBoxConM .c5LBoxConMCols4 dl dt,.c5LBoxConM .c5LBoxConMCols5 dl dt{
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dt a,.c5LBoxConM .c5LBoxConMCols2 dl dt a,.c5LBoxConM .c5LBoxConMCols3 dl dt a,.c5LBoxConM .c5LBoxConMCols4 dl dt a,.c5LBoxConM .c5LBoxConMCols5 dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dt a img,.c5LBoxConM .c5LBoxConMCols2 dl dt a img,.c5LBoxConM .c5LBoxConMCols3 dl dt a img,.c5LBoxConM .c5LBoxConMCols4 dl dt a img,.c5LBoxConM .c5LBoxConMCols5 dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dd, .c5LBoxConM .c5LBoxConMCols2 dl dd,.c5LBoxConM .c5LBoxConMCols3 dl dd,.c5LBoxConM .c5LBoxConMCols4 dl dd,.c5LBoxConM .c5LBoxConMCols5 dl dd{
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dd .desc1,.c5LBoxConM .c5LBoxConMCols2 dl dd .desc1,.c5LBoxConM .c5LBoxConMCols3 dl dd .desc1,.c5LBoxConM .c5LBoxConMCols4 dl dd .desc1,.c5LBoxConM .c5LBoxConMCols5 dl dd .desc1 {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dd .desc1 a,.c5LBoxConM .c5LBoxConMCols2 dl dd .desc1 a,.c5LBoxConM .c5LBoxConMCols3 dl dd .desc1 a,.c5LBoxConM .c5LBoxConMCols4 dl dd .desc1 a,.c5LBoxConM .c5LBoxConMCols5 dl dd .desc1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.c5LBoxConM .c5LBoxConMCols1 dl dd .desc2,.c5LBoxConM .c5LBoxConMCols2 dl dd .desc2,.c5LBoxConM .c5LBoxConMCols3 dl dd .desc2,.c5LBoxConM .c5LBoxConMCols4 dl dd .desc2,.c5LBoxConM .c5LBoxConMCols5 dl dd .desc2{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*内容6*/
+.content6 {
+    width: 1400px;
+    height: 427px;
+    line-height: 427px;
+    margin-bottom: 16px;
+}
+
+.content6 .content6LeftBox {
+    float: left;
+    width: 1400px;
+    height: 100%;
+}
+
+.content6 .content6LeftBox .c6LBoxHead {
+    margin-bottom: 26px;
+    padding-top: 16px;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 2px solid #8ac024;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadL {
+    padding-right: 7px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadL h3 {
+    float: left;
+    height: 46px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR {
+    float: left;
+    padding-top: 6px;
+    height: 46px;
+    line-height: 46px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR .c6HRFir {
+    padding-left: 22px;
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR .c6HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content6 .content6LeftBox .c6LBoxHead .c6HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+
+.content6 .content6LeftBox .c6LBoxCon {
+    width:1400px;
+    height: 340px;
+    line-height: 340px;
+}
+
+.content6 .content6LeftBox .c6LBoxCon .c6LBoxConM {
+    display: block;
+    width:100%;
+    height: 340px;
+    line-height: 340px;
+}
+
+.c6LBoxConM .c6LBoxConMCols1{
+    margin-left: 0;
+}
+
+.c6LBoxConM div{
+    float: left;
+    margin-left: 20px;
+    width: 180px;
+    height: 340px;
+}
+
+.c6LBoxConM div dl{
+    display: block;
+    width: 180px;
+    height: 170px;
+}
+
+.c6LBoxConM div dl dt{
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.c6LBoxConM div dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.c6LBoxConM div dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.c6LBoxConM div dl dd{
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 6px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 16px;
+}
+
+.c6LBoxConM div dl dd .desc1{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c6LBoxConM div dl dd .desc1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.c6LBoxConM div dl dd .desc2{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.c6LBoxConM .c6LBoxConMCols7 div{
+    margin-left:0;
+    height:155px;
+    line-height: 150px;
+    background: #76b300;
+    box-shadow: 0 0 10px rgba(0,0,0,.3) inset;
+}
+.c6LBoxConM .c6LBoxConMCols7 div a{
+    text-decoration: none;
+    color: #fff;
+    font-size:22px;
+    text-align: center;
+}
+
+/*内容7*/
+.content7 {
+    width: 1400px;
+    height: 279px;
+    line-height: 427px;
+    margin-bottom: 16px;
+}
+
+.content7 .content7LeftBox {
+    float: left;
+    width: 1400px;
+    height: 279px;
+}
+
+.content7 .content7LeftBox .c7LBoxHead {
+    margin-bottom: 26px;
+    padding-top: 16px;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 2px solid #8ac024;
+}
+
+.content7 .content7LeftBox .c7LBoxHead .c7HeadL {
+    padding-right: 7px;
+}
+
+.content7 .content7LeftBox .c7LBoxHead .c7HeadL h3 {
+    float: left;
+    height: 46px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content7 .content7LeftBox .c7LBoxHead .c7HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content7 .content7LeftBox .c7LBoxHead .c7HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content7 .content7LeftBox .c7LBoxHead .c7HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+.content7 .content7LeftBox .c7LBoxCon{
+    height:192px;
+    overflow: hidden;
+}
+
+.c7LBoxCon{
+    width:100%;
+    height:192px;
+    margin-left:-20px;
+}
+.c7PerBox{
+    float: left;
+    width:180px;
+    height:175px;
+    margin-left:20px;
+    margin-bottom:40px;
+    background-color: #f2f2f2;
+    border-bottom:1px solid #ebebeb;
+}
+.c7PerBox .t{
+    width:166px;
+    padding:14px 0 0 14px;
+    height: 80px;
+}
+.c7PerBox .t a,.c7PerBox .t a img{
+    float: left;
+    display: block;
+    width:54px;
+    height:54px;
+    line-height:54px;
+    border-radius:50%;
+}
+.c7PerBox .t .c7tTitle{
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 3px;
+}
+.c7PerBox .t .c7tTitle a{
+    display: block;
+    width:100%;
+    height:21px;
+    line-height:21px;
+    color: #333;
+}
+.c7PerBox .t .c7tTitle a:hover{
+    color:greenyellow;
+}
+.c7PerBox .t .c7tTitle21{
+    float: left;
+    padding-left: 10px;
+    width:87px;
+    height:21px;
+    line-height:21px;
+    white-space: nowrap;
+}
+.c7PerBox .t .c7tTitle21 b{
+    margin-right:5px;
+    color:#999;
+    font-size:12px;
+    font-weight:normal;
+}
+.c7PerBox .t .c7tTitle21 strong{
+    color: #333;
+    font-size:12px;
+    font-weight:normal;
+}
+.c7PerBox .m{
+    margin-top:-20px;
+    width:166px;
+    padding-left: 14px;
+    height:36px;
+    line-height:26px;
+    color:#999;
+    font-size:12px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.c7PerBox .b{
+    margin:20px auto;
+    width:134px;
+    height:26px;
+    border-radius: 3px;
+    line-height:26px;
+    background: #699f00;
+}
+.c7PerBox .b a{
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    text-indent:-10px;
+}
+.c7PerBox .b a:hover{
+    background: lightgreen;
+}
+
+/*推拉门*/
+.door{
+    margin-top:25px;
+    width:100%;
+    height:207px;
+    clear: both;
+}
+.door .doorHead{
+    width:84px;
+    font-size:12px;
+    line-height:22px ;
+    background:#8ac024 ;
+    color: #fff;
+    text-align: center;
+    border-radius:4px 4px 0 0;
+}
+.door .doorCon{
+    position: relative;
+    width:100%;
+    padding:10px 1px;
+    border:1px solid #8ac024;
+    overflow: hidden;
+}
+.door .doorCon .outBox{
+    margin:0 auto;
+    width:1310px;
+    height:140px;
+    overflow: hidden;
+}
+.door .doorCon .innerBox{
+    margin-left:-10px;
+    width:5000px;
+    height:170px;
+}
+.theater{
+    float: left;
+    margin:0 10px;
+    width:170px;
+    height:140px;
+    /*CSS3过渡动画需要加给具备的动画父元素*/
+    transition: all .7s cubic-bezier(.46,.98,.54,1.1);
+    cursor: pointer;
+    background: #fff;
+    overflow: hidden;
+}
+.theater .perBox{
+    width:930px;
+}
+.theater .perBox .dleft{
+    float: left;
+    width:170px;
+}
+.theater .perBox .dright{
+    float: left;
+    margin-left:20px;
+    height:140px;
+}
+.theater .perBox .dright img{
+    display: block;
+    opacity: 0;
+    width:740px;
+    height:100%;
+    transition:all .7s cubic-bezier(.46,.98,.54,1.1);
+}
+
+/*!*鼠标移动到当前元素时，当前元素宽度改变*!.theaterHover*/
+.door .theaterHover{
+    width:930px;
+    z-index: 100;
+}
+/*鼠标移动到当前元素时，其他元素宽度全部变为0*/
+.door .theaterNoWidth{
+    margin:0;
+    width:0;
+}
+/*鼠标移动到当前元素时，当前元素右边的详细图片出来时透明度发生改变*/
+.door .theaterHover .perBox .dright img{
+    opacity: 1;
+}
+/*===============================================================*/
+.door .doorCon .innerBox .theater .perBox .dleft .doorT{
+    display: block;
+    width: 100%;
+    height:100px;
+}
+.door .doorCon .innerBox .theater .perBox .dleft .doorB{
+    display: block;
+    width:100%;
+    height:40px;
+}
+.door .doorCon .innerBox .theater .perBox .dleft .doorT img,.door .doorCon .innerBox .theater .perBox .dleft .doorB img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.door .btnLeft{
+    position: absolute;
+    top:50%;
+    margin-top:-13px;
+    width:15px;
+    height:26px;
+    cursor: pointer;
+    left:4px ;
+    background: url("img/arrow-left.png") no-repeat center center;
+}
+.door .btnRight{
+    position: absolute;
+    top:50%;
+    margin-top:-13px;
+    width:15px;
+    height:26px;
+    cursor: pointer;
+    right:4px;
+    background: url("img/arrow-right.png") no-repeat center center;
+}
+
+/*内容8*/
+/*备注：由于没有写公共样式，导致后面部分样式要单独设置没有规范*/
+.content2 .content2LeftBox .c8LBoxCon{
+    width:1200px;
+    height:608px;
+    margin-left:-20px;
+    overflow: hidden;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox{
+    float: left;
+    margin-left:20px;
+    width:180px;
+    height:304px;
+    overflow: hidden;
+}
+.content2 .content2RightBox .c8perBox{
+    float: left;
+    width:180px;
+    height:304px;
+    overflow: hidden;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dt,.content2 .content2RightBox .c8perBox dt{
+    display: block;
+    width:180px;
+    height:236px;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dt a,.content2 .content2LeftBox .c8LBoxCon .c8perBox dt a img,.content2 .content2RightBox .c8perBox dt a,.content2 .content2RightBox .c8perBox dt a img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd,.content2 .content2RightBox .c8perBox dd{
+    width:170px;
+    height:46px;
+    line-height:20px;
+    padding:7px 5px 0;
+    background-color: #f2f2f2;
+    margin-bottom:15px;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro,.content2 .content2RightBox .c8perBox dd .c8intro{
+    float: left;
+    line-height:20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro a,.content2 .content2RightBox .c8perBox dd .c8intro a{
+    display: block;
+    width:100%;
+    height:100%;
+    color: #333;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro a:hover,.content2 .content2RightBox .c8perBox dd .c8intro a:hover{
+    color: #699f00;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro2,.content2 .content2RightBox .c8perBox dd .c8intro2{
+    float: right;
+    height:20px;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro2 strong,.content2 .content2RightBox .c8perBox dd .c8intro2 strong{
+    float: left;
+    font-size:18px;
+    line-height:20px;
+    font-weight:normal;
+    color: #ff722c;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro2 em,.content2 .content2RightBox .c8perBox dd .c8intro2 em {
+    float: left;
+    font-size:12px;
+    line-height:20px;
+    font-style:normal;
+    color: #ff722c;
+    padding-top:2px;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro2:after,.content2 .content2RightBox .c8perBox dd .c8intro2:after{
+    content: '';
+    clear: both;
+}
+.content2 .content2LeftBox .c8LBoxCon .c8perBox dd .c8intro3,.content2 .content2RightBox .c8perBox dd .c8intro3{
+    display: block;
+    width:100%;
+    font-size:12px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.content2 .content2RightBox .c8RBoxConT{
+    display: block;
+    width:180px;
+    height:304px;
+}
+.content2 .content2RightBox .c8RBoxConT ul{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.content2 .content2RightBox .c8RBoxConT ul li{
+    position: relative;
+    display: block;
+    margin-bottom:12px;
+    width:180px;
+    height:21px;
+}
+.content2 .content2RightBox .c8RBoxConT ul li .c8RBCTLeft{
+    float: left;
+    width:89px;
+    height:21px;
+    line-height:21px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.content2 .content2RightBox .c8RBoxConT ul li a:hover{
+    color: #000;
+}
+.content2 .content2RightBox .c8RBoxConT ul li .c8RBCTLeft em{
+    float: left;
+    border-radius:3px;
+    width:20px;
+    height:20px;
+    margin-right:5px;
+    text-align: center;
+    background: -webkit-gradient(linear,0 0,0 100%,from(#7ab800),to(#69a000));
+    color: #fff;
+    font-style: normal;
+}
+.content2 .content2RightBox .c8RBoxConT ul li .c8RBCTLeft span{
+    float: left;
+    height:19px;
+    line-height:19px;
+}
+.content2 .content2RightBox .c8RBoxConT ul li .c8LBCTRight{
+    position: absolute;
+    top: 7px;
+    right:0;
+    float: right;
+    width:7px;
+    height:8px;
+    background:url("img/site-icons-qyIndex.png") no-repeat center center;
+    background-position: 0 -769px;
+}
+
+/*包着content8和content9的容器*/
+.contentAbout{
+    display: block;
+    width:1420px;
+    height:216px;
+    clear: both;
+}
+
+/*内容8*/
+.content8{
+    float: left;
+    width: 600px;
+    height: 216px;
+    line-height: 216px;
+}
+.content8 .c8Head {
+    width:580px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top:15px;
+}
+
+.content8 .c8Head .c8HeadL {
+    padding-right: 7px;
+}
+
+.content8 .c8Head .c8HeadL h3 {
+    float: left;
+    height: 45px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.content8 .c8Head .c8HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content8 .c8Head .c8HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content8 .c8Head .c8HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content8 .c8Head .c8HeadR {
+    display: inline-block;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content8 .c8Head .c8HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content8 .c8Head .c8HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content8 .c8Head .c8HeadR .c8HRFir {
+    padding-left: 22px;
+}
+
+.content8 .c8Head .c8HeadR .c4HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content8 .c8Head .c8HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+.content8 .c8Content{
+    display: block;
+    height:197px;
+}
+.content8 .c8Content dl{
+    float: left;
+    width: 180px;
+    height: 170px;
+    line-height: 170px;
+    padding-right: 20px;
+}
+
+.content8 .c8Content dl dt {
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.content8 .c8Content dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content8 .c8Content dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content8 .c8Content dl dd{
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content8 .c8Content dl dd .desc1{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content8 .c8Content dl dd .desc1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content8 .c8Content dl dd .desc2{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*内容9*/
+.content9{
+    float: left;
+    width: 800px;
+    height: 216px;
+    line-height: 216px;
+}
+.content9 .c9Head {
+    width:780px;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-top:15px;
+}
+
+.content9 .c9Head .c9HeadL {
+    padding-right: 7px;
+}
+
+.content9 .c9Head .c9HeadL h3 {
+    float: left;
+    height: 45px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.content9 .c9Head .c9HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content9 .c9Head .c9HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 8px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content9 .c9Head .c9HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content9 .c9Head .c9HeadR {
+    display: inline-block;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content9 .c9Head .c9HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content9 .c9Head .c9HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content9 .c9Head .c9HeadR .c9HRFir {
+    padding-left: 22px;
+}
+
+.content9 .c9Head .c9HeadR .c9HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content9 .c9Head .c9HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+.content9 .c9Content{
+    display: block;
+    height:197px;
+}
+.content9 .c9Content dl{
+    float: left;
+    width: 180px;
+    height: 170px;
+    line-height: 170px;
+    padding-right: 20px;
+}
+
+.content9 .c9Content dl dt {
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.content9 .c9Content dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content9 .c9Content dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content9 .c9Content dl dd{
+    height: 46px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content9 .c9Content dl dd .desc1{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content9 .c9Content dl dd .desc1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+}
+
+.content9 .c9Content dl dd .desc2{
+    height: 20px;
+    line-height: 20px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*临时间隔*/
+.temp{
+    display: block;
+    height:42px;
+}
+
+/*内容10*/
+.content10 {
+    width: 1400px;
+    height: 427px;
+    line-height: 427px;
+    margin-bottom: 15px;
+    margin-right:-20px;
+}
+
+.content10 .content10LeftBox {
+    float: left;
+    margin-right:20px;
+    width: 580px;
+    height: 100%;
+}
+
+.content10 .content10LeftBox .c10LBoxHead {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadL {
+    padding-right: 7px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadL h3 {
+    float: left;
+    height: 45px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR {
+    float: left;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR span {
+    float: left;
+    padding-left: 10px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR .c10HRFir {
+    padding-left: 22px;
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR .c10HRLst a:after {
+    display: none;
+    content: "";
+}
+
+.content10 .content10LeftBox .c10LBoxHead .c10HeadR span a:after {
+    display: inline-block;
+    content: "";
+    margin-left: 9px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+
+.content10 .content10LeftBox .c10LBoxCon {
+    height: 340px;
+    line-height: 340px;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL {
+    float: left;
+    width: 380px;
+    height: 302px;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl dt {
+    width: 100%;
+    height: 252px;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl dt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl dd {
+    width: 100%;
+    height: 27px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConL dl dd a {
+    display: block;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content10 .content10LeftBox .c10LBoxCon .c10LBoxConM {
+    float: left;
+    height: 302px;
+    line-height: 302px;
+}
+
+.c10LBoxConM .c10LBoxConMCols1,.c10LBoxConM .c10LBoxConMCols2,.c10LBoxConM .c10LBoxConMCols3,.c10LBoxConM .c10LBoxConMCols4,.c10LBoxConM .c10LBoxConMCols5 {
+    float: left;
+    margin-left: 20px;
+    width: 180px;
+    height: 302px;
+}
+
+.c10LBoxConM .c10LBoxConMCols1 dl,.c10LBoxConM .c10LBoxConMCols2 dl,.c10LBoxConM .c10LBoxConMCols3 dl,.c10LBoxConM .c10LBoxConMCols4 dl,.c10LBoxConM .c10LBoxConMCols5 dl {
+    display: block;
+    width: 180px;
+    height: 151px;
+}
+
+.c10LBoxConM .c10LBoxConMCols1 dl dt,.c10LBoxConM .c10LBoxConMCols2 dl dt,.c10LBoxConM .c10LBoxConMCols3 dl dt,.c10LBoxConM .c10LBoxConMCols4 dl dt,.c10LBoxConM .c10LBoxConMCols5 dl dt{
+    display: block;
+    width: 180px;
+    height: 101px;
+}
+
+.c10LBoxConM .c10LBoxConMCols1 dl dt a,.c10LBoxConM .c10LBoxConMCols2 dl dt a,.c10LBoxConM .c10LBoxConMCols3 dl dt a,.c10LBoxConM .c10LBoxConMCols4 dl dt a,.c10LBoxConM .c10LBoxConMCols5 dl dt a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.c10LBoxConM .c10LBoxConMCols1 dl dt a img,.c10LBoxConM .c10LBoxConMCols2 dl dt a img,.c10LBoxConM .c10LBoxConMCols3 dl dt a img,.c10LBoxConM .c10LBoxConMCols4 dl dt a img,.c10LBoxConM .c10LBoxConMCols5 dl dt a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.c10LBoxConM .c10LBoxConMCols1 dl dd, .c10LBoxConM .c10LBoxConMCols2 dl dd,.c10LBoxConM .c10LBoxConMCols3 dl dd,.c10LBoxConM .c10LBoxConMCols4 dl dd,.c10LBoxConM .c10LBoxConMCols5 dl dd{
+    height: 27px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+/*=====================================================================*/
+.content10 .content10LeftBox2 {
+    float: left;
+    margin-right:20px;
+    width: 380px;
+    height: 100%;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadL {
+    padding-right: 7px;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadL h3 {
+    float: left;
+    height: 45px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadR {
+    float: left;
+    padding: 10px 0 10px;
+    height: 27px;
+    line-height: 27px;
+}
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadR  a {
+    float: left;
+    width:45px;
+    height:27px;
+    margin-bottom:8px;
+}
+.content10 .content10LeftBox2 .c10LBoxHead .c10HeadR  a img {
+    display: block;
+    width:100%;
+    height:100%;
+}
+.content10 .content10LeftBox2 .c10LBoxCon{
+    margin-left:-20px;
+}
+/*内容3*/
+.content10 .content10LeftBox3 {
+    float: left;
+    margin-right:20px;
+    width: 380px;
+    height: 100%;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead {
+    margin-bottom: 25px;
+    padding-top: 15px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #8ac024;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadL {
+    padding-right: 7px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadL h3 {
+    float: left;
+    height: 45px;
+    background: url("img/zongyiBtn.png") no-repeat 0 10px;
+    font-size: 28px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadL h3 a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    color: #699f00;
+    font-weight: normal;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadL span {
+    float: left;
+    height: 22px;
+    line-height: 22px;
+    margin-top: 16px;
+    padding-left: 18px;
+    padding-right: 12px;
+    color: #699f00;
+    font-size: 14px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadL span a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #699f00;
+}
+/*上面代码没BUG别动*/
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadR {
+    display: inline-block;
+    padding-top: 5px;
+    height: 45px;
+    line-height: 45px;
+}
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadR .c10HRFir a:before{
+    display: none;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadR span a {
+    float: left;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadR span a:before {
+    display: inline-block;
+    content: "";
+    margin:0 6px;
+    width: 14px;
+    height: 14px;
+    background: url("img/divide-i.png") no-repeat left 4px;
+}
+.content10 .content10LeftBox3 .c10LBoxHead .c10HeadR span a:hover{
+    color: #6cc900;
+}
+/*下面代码没BUG别动*/
+
+.content10 .content10LeftBox3 .c10LBoxCon {
+    height: 340px;
+    line-height: 340px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL {
+    float: left;
+    width: 380px;
+    height: 302px;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl dt {
+    width: 100%;
+    height: 252px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl dt a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl dt a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("img/lazyload.png") no-repeat center center;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl dd {
+    width: 100%;
+    height: 27px;
+    line-height: 20px;
+    padding: 7px 5px 0;
+    background: #f2f2f2;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConL dl dd a {
+    display: block;
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content10 .content10LeftBox3 .c10LBoxCon .c10LBoxConM {
+    float: left;
+    height: 302px;
+    line-height: 302px;
+    margin-left:-20px;
+}
+
+#shadowBox{
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    opacity: 0.5;
+    z-index: 100;
+    background: rgb(0, 0, 0);
+}
+
+#loginBox{
+    position: absolute;
+    top:197px;
+    left:50%;
+    margin-left: -256px;
+    width: 462px;
+    height:443px;
+    z-index: 4000;
+    display: block;
+    visibility: visible;
+}
+#loginBox .loginHead{
+    position: relative;
+    width: 462px;
+    height:170px;
+    background: url("./img/loginHead.png") no-repeat center center;
+}
+#loginBox .loginHead .closeBtn{
+    position: absolute;
+    top:70px;
+    right:17px;
+    width:13px;
+    height:13px;
+    display: block;
+    background: url("./img/close.png") no-repeat;
+}
+#loginBox .loginBody{
+    width:462px;
+    height:272px;
+    background-color: #fff;
+}
+.loginBody .loginCon{
+    position: relative;
+    width:380px;
+    padding-left: 47px;
+    height: 100%;
+}
+.loginBody .loginCon .top{
+    width:100%;
+    height:57px;
+    padding-bottom: 25px;
+}
+.loginBody .loginCon .bottom{
+    margin-top:-25px;
+    width:100%;
+    height:57px;
+}
+.loginBody .loginCon .top .username,.loginBody .loginCon .bottom .password{
+    float: left;
+    width: 50px;
+    height:57px;
+    line-height:57px;
+    font-size: 12px;
+}
+.loginBody .loginCon .top .user,.loginBody .loginCon .bottom .pwd{
+    position: relative;
+    float: left;
+    display: block;
+    margin-top:13px;
+    width: 264px;
+    height:30px;
+    line-height: 30px;
+    font-size:12px;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.loginBody .loginCon .top .user .userInput,.loginBody .loginCon .bottom .pwd .pwdInput{
+    width:230px;
+    height:22px;
+    line-height:22px;
+    font-size:12px;
+    padding: 4px 0 0 5px;
+    color: #333;
+}
+.loginBody .loginCon .top .user .code{
+    background: url("./img/code.png") no-repeat center center;
+    width:16px;
+    height:16px;
+    display: block;
+    position: absolute;
+    right: 4px;
+    top: 8px;
+}
+.loginBody .loginCon .loginSth{
+    margin:0 auto;
+    width:266px;
+    height:16px;
+    line-height: 16px;
+}
+.loginBody .loginCon .loginSth .loginCheck{
+    background: url("./img/reg.png") no-repeat center center;
+    display: block;
+    float: left;
+    height: 20px;
+    padding-left: 23px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.loginBody .loginCon .loginSth .loginCheck .select{
+    background-position: 0 -126px;
+}
+.loginBody .loginCon .loginSth .forgetReg{
+    float: right;
+    height:16px;
+    line-height: 16px;
+}
+.loginBody .loginCon .loginSth .forgetReg .find,.loginBody .loginCon .loginSth .forgetReg .reg{
+    display: inline-block;
+    height:20px;
+    line-height:20px;
+    vertical-align: middle;
+    color: #699f00;
+}
+.loginBody .loginCon .loginSth .forgetReg .forgetRegLine{
+    width:1px;
+    height:12px;
+    background: #d6d6d6;
+    margin: 0 9px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.loginBtn{
+    width:266px;
+    text-align: center;
+}
+.loginBtn a{
+    display: block;
+    color: #fff;
+    font-size:14px;
+    border-radius:3px;
+    width:266px;
+    height:32px;
+    line-height:32px;
+    background: #69a200;
+}
+
+
+
+/*注册表*/
+/*#reg{*/
+    /*position: fixed;*/
+    /*top:200px;*/
+    /*left:50%;*/
+    /*margin-left:-100px;*/
+    /*width:200px;*/
+    /*height:200px;*/
+    /*background-color: #fff;*/
+    /*z-index: 1000;*/
+/*}*/
+
+
+
+
